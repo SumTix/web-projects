@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seçici Türleri</title>
+    <style>
+        h4 {
+            color: blueviolet;
+        }
+        * {
+            font-family: sans-serif;
+        }
+        #idsecici {
+            color: blue;
+        }
+        .classsecici {
+            font-size: x-large;
+            color: brown;
+        }
+        div>p {
+            color: red;
+        }
+        div>p>span {
+            font-weight: bold;
+        }
+        h3~p {
+            font-weight: bold;
+            color: green;
+        }
+        h3+div {
+            font-weight: bold;
+            color: green;
+        }
+        i,u {
+            color: gray;
+        }
+        a:link {
+            color: aqua;
+        }
+        a:visited {
+            color: black;
+        }
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Element Seçici</h1>
+    <h4>Web Tasarım Uygulaması Geliştirme Dersi</h4>
+<hr>
+    <h1>Evrensel Seçici</h1>
+    <p>Tüm metinlerin yazı tipi ailesi Sans-Serif</p>
+<hr>
+    <h1>ID Seçici</h1>
+    <h5 id="idsecici">Belirli bir ID taşıyan tek bir etiketi etkiler.</h5>
+    <p>Bu etiketin ID'sini taşımayan diğer etiketler etkilenmez.</p>
+<hr>
+    <h1>Class Seçici</h1>
+    <h5 class="classsecici">ID'den tek farkı birden fazla etiketin aynı Class'ı taşıyabilmesi.</h5>
+    <ul>
+        <li class="classsecici">Bu etiketler aynı olmak zorunda değil</li>
+    </ul>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th class="classsecici">Farklı etiketler de olabilir</th>
+        </tr>
+    </table>
+<hr>
+    <h1>Çocuk Seçici</h1>
+    <div>
+        <p>Sadece belirli bir etiketin altındaki etiketleri etkiler.Örneğin div'in içindeki p'ler.</p>
+    </div>
+    <p>Tüm p etiketlerini etkilemez.</p>
+<hr>
+    <h1>Torun Seçici</h1>
+    <div>
+        <p> <span>Bir etiketin altındaki etiketin bir altındaki etiketi etkiler.</span> </p>
+    </div>
+<hr>
+    <h1>Genel Sibling Seçici</h1>
+    <p>Yağız Güneysu</p>
+    <h3>Ahmet Talha Tezcan</h3>
+    <div>Ali Asali</div>
+    <p>Batuhan Sayal</p>
+<hr>
+    <h1>Bitişik Sibling Seçici</h1>
+    <pre>Yağız Güneysu</pre>
+    <h3>Ahmet Talha Tezcan</h3>
+    <div>Ali Asali</div>
+    <pre>Batuhan Sayal</pre>
+<hr>
+    <h1>Multiple Seçici</h1>
+    <i>Birden fazla etiket türüne aynı anda özellik vermek için kullanılır. (i Etiketi)</i><br>
+    <u>(U Etiketi)</u>
+<hr>
+    <h1>Attribute Seçici</h1>
+    <a href="https://www.youtube.com">Youtube</a>
+</body>
+</html>

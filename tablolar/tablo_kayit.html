@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablo Giriş Formu</title>
+    <style>
+        html {
+            background-color: lightgray;
+            font-family: sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kayıt Formu</h1>
+    </header><hr>
+    <form autocomplete="on">
+        <table border="1">
+            <tr>
+                <th>Adı</th>
+                <td><input type="text" name="ad" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>Soyadı</th>
+                <td><input type="text" name="soyad" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>E-Posta</th>
+                <td><input type="email" name="eposta" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>Parola</th>
+                <td><input type="password" name="parola" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>Parola (Tekrar)</th>
+                <td><input type="password" name="parola2" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td><input type="text" name="telefon" placeholder="(___)(_______)" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <th>Cinsiyet</th>
+                <td><center><input type="radio" name="cinsiyet" value="erkek">Erkek <input type="radio" name="cinsiyet" value="kadın">Kadın</center></td>
+            </tr>
+            <tr>
+                <th>Doğum Tarihi</th>
+                <td><input type="date" name="doğum_tarihi" style="width: 310px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="checkbox" name="sozlesme">Üyelik Sözleşmesi Şartlarını Okudum ve Kabul Ediyorum.</td>
+            </tr>
+            <tr>
+                <td colspan="2"><center><button type="submit">Kaydet</button>  <button type="reset">Temizle</button></center></td>
+            </tr>
+        </table> 
+</form>
+</body>
+</html>

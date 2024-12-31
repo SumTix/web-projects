@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Formu</title>
+    <style>
+        html{
+            background-color: lightgray;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kayıt Formu</h1>
+    </header><hr>
+    <form>
+        <fieldset>
+            <legend>Üyelik İşlemleri</legend><br>
+        <b>Hesap Bilgileriniz</b><br><br>
+        <label for="username">Kullanıcı Adı : </label><input type="text" name="username" required><br><br>
+        <label for="eposta">E-Posta : </label><input type="email" name="eposta" required><br><br>
+        <label for="parola">Parola : </label><input type="password" name="parola" required><br><br>
+        <b>Kişisel Bilgileriniz</b><br><br>
+        <label for="ad">Ad : </label><input type="text" name="ad"><br><br>
+        <label for="soyad">Soyad : </label><input type="text" name="soyad"><br><br>
+        <select name="sehirler" id="sehirler">
+            <option value="istanbul">İstanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+        </select><br><br>
+        <label for="Cinsiyet">Cinsiyet : </label>
+        <input type="radio" name="Cinsiyet" value="erkek">Erkek 
+        <input type="radio" name="Cinsiyet" value="kadın">Kadın <br><br>
+        <label>Hobileriniz : </label>
+        <input type="checkbox" name="sinema">Sinema 
+        <input type="checkbox" name="gezmek">Gezmek 
+        <input type="checkbox" name="spor">Spor 
+        <input type="checkbox" name="kitap">Kitap <br><br>
+        <button type="submit">Kaydet</button> <button type="reset">Temizle</button>
+    </fieldset>
+</form>
+</body>
+</html>

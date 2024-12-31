@@ -1,0 +1,27 @@
+ul {
+    list-style-type: lower-greek;
+}
+li {
+    width: 300px;
+    margin: 5px;
+    padding: 5px;
+    font-family: sans-serif;
+    border-style: outset;
+    border-color: blue;
+    background-color: cadetblue;
+}
+h1 {
+    font-family: sans-serif;
+    margin: 5px;
+    padding: 5px;
+    background-color: beige;
+    border-style: outset;
+    border-color: black;
+    display: inline;
+}
+a {
+    font-size: 100px;
+    font-family: sans-serif;
+    display: block;
+    border-style: dashed;
+}

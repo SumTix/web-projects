@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta  name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<style>
+    html {
+        font-family: Arial, sans-serif;
+        background-color: lightgray;
+    }
+</style>
+</head>
+<body><center>
+<header>
+<h1>Form</h1>
+</header>
+<form name="giris"action="giris.html" method="get" autocomplete="on">
+    <label>Ad:</label><input type="text" name="name"><br><br>
+    <label>Soyad:</label><input type="text" name="surname"><br><br>
+    <label>E-posta</label><input type="email" name="email"><br><br>
+    <label>Şifre:</label><input type="password" name="password"><br><br>
+    <label for="gender">Cinsiyetinizi Seçiniz :</label><br><br>
+    <input type="radio" name="gender" value="male">Erkek <input type="radio" name="gender" value="female">Kadın <br><br>
+    <label>Renk Seçiniz : </label><input type="color" name="color"><br><br>
+    <label>Doğum Tarihi : </label><input type="date" name="gun"><br><br>
+    <label>Doğum Günü : </label><input type="datetime" name="dogum"><br><br>
+    <label>Ay ve Yıl : </label><input type="month" name="ay"><br><br>
+    <label>Hafta ve Yıl : </label><input type="week" name="hafta"><br><br>
+    <label>Randevu Saati : </label><input type="time" name="saat"><br><br>
+    <label>Randevu Tarihi ve Saati : </label><input type="datetime-local" name="tarih-saat"><br><br>
+    <label>Sayı (1-9) :</label><input type="sumber" name="sec" min="1" max="9"><br><br>
+    <label>Aralık (1-9) :</label><input type="range" name="range" min="1" max="9"><br><br>
+    <select name="iller" id="iller" size="1">
+        <option value="54">Sakarya</option>
+        <option value="06">Ankara</option>
+        <option value="34">İstanbul</option>
+    </select><br><br>
+    <select name="aylar" id="aylar" multiple>
+        <option value="1">Ocak</option>
+        <option value="2">Şubat</option>
+        <option value="3">Mart</option>
+        <option value="4">Nisan</option>
+        <option value="5">Mayıs</option>
+        <option value="6">Haziran</option>
+        <option value="7">Temmuz</option>
+        <option value="8">Ağustos</option>
+        <option value="9">Eylül</option>
+        <option value="10">Ekim</option>
+        <option value="11">Kasım</option>
+        <option value="12">Aralık</option>
+    </select><br><br>
+    <input type="checkbox" name="terms">Sözleşmeyi okudum ve onaylıyorum <br><br>
+    <input type="submit" value="Gönder"> <button type="reset" value="Temizle">Temizle</button>
+</form></center>
+</body>
+</html>

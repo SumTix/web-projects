@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piksel Sanatı Oluşturucusu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(16, 20px);
+            grid-template-rows: repeat(16, 20px);
+            border: 1px solid black;
+        }
+        .pixel {
+            width: 20px;
+            height: 20px;
+        }
+        #renkPaleti {
+            margin-top: 10px;
+        }
+        .renk {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid"></div>
+    <div id="renkPaleti">
+        <div class="renk" style="background-color: red;"></div>
+        <div class="renk" style="background-color: blue;"></div>
+        <div class="renk" style="background-color: green;"></div>
+        <div class="renk" style="background-color: yellow;"></div>
+        <div class="renk" style="background-color: black;"></div>
+        <div class="renk" style="background-color: white;"></div>
+    </div>
+    <button id="temizle">Temizle</button>
+    <button id="kaydet">Kaydet</button>
+    <script>
+        $(document).ready(function() {
+    const grid = $('#grid');
+    const renkPaleti = $('#renkPaleti');
+    let seciliRenk = 'black'; // Başlangıç rengi
+
+    // Piksel gridini oluştur
+    for (let i = 0; i < 256; i++) {
+        grid.append('<div class="pixel"></div>');
+    }
+
+    // Renk paleti etkilişimleri
+    renkPaleti.on('click', '.renk', function() {
+        seciliRenk = $(this).css('background-color'); // Seçilen rengin kaydedilmesi
+    });
+
+    // Piksel boyama (mousedown: sol tıklama)
+    grid.on('mousedown', '.pixel', function(e) {
+        $(this).css('background-color', seciliRenk); // Seçilen renk ile boyama
+        $(this).on('mouseover', function() {
+            $(this).css('background-color', seciliRenk); // Fare hareketiyle renk değişimi
+        });
+    });
+
+    // Piksel boyama işlemini bitir (mouseup: fareyi bıraktığında boyama işlemi bitiyor)
+    $(document).on('mouseup', function() {
+        grid.off('mouseover'); // Fareyi bıraktığında boyama işlemi sona erer
+    });
+
+    // Temizle düğmesi
+    $('#temizle').click(function() {
+        $('.pixel').css('background-color', ''); // Tüm pikselleri temizle
+    });
+
+    // Kaydet düğmesi
+    $('#kaydet').click(function() {
+        html2canvas(grid[0]).then(canvas => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'piksel_sanati.png';
+            link.click();
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

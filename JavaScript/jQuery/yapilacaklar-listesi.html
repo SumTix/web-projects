@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapılacaklar Listesi</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .todo-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            margin-right: 8px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            padding: 12px 18px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background: #f2f2f2;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove {
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.2s ease;
+        }
+
+        .remove:hover {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>Yapılacaklar Listesi</h2>
+    <input type="text" id="task" placeholder="Bir görev ekle...">
+    <button id="addTask">Ekle</button>
+    <ul id="taskList"></ul>
+    </div>
+    <script>
+        $(document).ready(function() {
+    //Görev Ekleme
+    $('#addTask').click(function() {
+        const task = $('#task').val().trim();
+        if (task !== ''){ // Görev boş değilse
+            $('#taskList').append(`<li>${task}<span class="remove">&#10060;</span></li>`);
+            $('#task').val('');
+        }
+    });
+
+    //Enter tuşu ile görev ekleme
+    $('#task').keypress(function(a) {
+        if (a.which == 13) {
+            $('#addTask').click();
+        }
+    });
+
+    //Görev silme
+    $('#taskList').on('click', '.remove', function() { // Bu satırdaki hatayı düzelttim
+        $(this).parent().remove();
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id Seçici</title>
+</head>
+<body>
+    <button onclick="arttir()">Tıkla</button>
+    <p id="sayac">Tıklama Sayısı : 0</p>
+    <script>
+        var sayi = 0;
+        function arttir() {
+            const sayac = document.getElementById("sayac");
+            sayi++;
+            sayac.textContent = "Tıklama Sayısı : " + sayi;
+        }
+    </script>
+</body>
+</html>

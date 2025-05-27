@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamanlayici</title>
+</head>
+<body>
+    <h2>Zamanlayıcı</h2>
+<input type="number" id="dkInput"><br><br>
+<button onclick="baslat()">Başlat</button>
+<button onclick="durdur()">Durdur</button><br><br>
+<button onclick="sifirla()">Sıfırla</button>
+<h1 id="gosterge">
+  <span id="dk">00</span>:<span id="sn">00</span>
+</h1>
+<script>
+  var sayac = 60;
+  var dur = false;
+  var a;
+  var dk = 0;
+
+  function baslat() {
+    if (!dur) {
+      dk = parseInt(document.getElementById("dkInput").value-1);
+    }
+    a = setInterval(function () {
+      document.getElementById("dk").innerText = dk.toString().padStart(2, "0");
+      sayac--;
+      document.getElementById("sn").innerText = sayac.toString().padStart(2, "0");
+      if (sayac == 0) {
+        if (dk == 0) {
+          clearInterval(a);
+        } else {
+          dk--;
+          sayac = 60;
+        }
+      }
+    }, 1000);
+  }
+
+  function durdur() {
+    dur = true;
+    clearInterval(a);
+  }
+
+  function sifirla() {
+    clearInterval(a);
+    dur = false;
+    sayac = 60;
+    dk = 0;
+    document.getElementById("dk").innerText = "00";
+    document.getElementById("sn").innerText = "00";
+  }
+</script>
+</body>
+</html>

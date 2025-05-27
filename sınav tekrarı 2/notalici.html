@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Not Alıcı</title>
+</head>
+<body style="text-align: center; font-family: sans-serif;">
+  <p style="color: red;">Not Alma Uygulaması</p>
+  <h1>Basit Not Alıcı</h1>
+
+  <input type="text" id="notInput" placeholder="Notunuzu buraya yazın">
+  <button onclick="notEkle()">Not Ekle</button><br>
+
+  <ul id="notListesi" style="list-style-type: disc; text-align: left; display: inline-block; margin-top: 20px;"></ul>
+
+  <script>
+    function notEkle() {
+      const input = document.getElementById("notInput");
+      const yazi = input.value.trim();
+      if (yazi === "") return;
+      const br = document.createElement("br");
+      const li = document.createElement("li");
+      li.textContent = yazi + " ";
+      const silBtn = document.createElement("button");
+      silBtn.textContent = "Sil";
+      silBtn.onclick = function () {
+        li.remove();
+        br.remove();
+      };
+      li.appendChild(silBtn);
+      document.getElementById("notListesi").appendChild(li);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

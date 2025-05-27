@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seçenekler</title>
+</head>
+<body>
+    <form>
+        <input type="radio" name="secenek" value="secenek1"> Seçenek 1 <br><br>
+        <input type="radio" name="secenek" value="secenek2"> Seçenek 2 <br><br>
+        <input type="radio" name="secenek" value="secenek3"> Seçenek 3 <br><br>
+        </form>
+        <button onclick="secenekk()">Gönder</button>
+    <p id="sonuc"></p>
+    <script>
+        function secenekk() {
+            const secilen = document.getElementsByName("secenek");
+            let deger = "";
+            for (let i = 0; i < secilen.length; i++) {
+                if (secilen[i].checked) {
+                    deger = secilen[i].value;
+                    break;
+                }
+            }
+            document.getElementById("sonuc").textContent= deger;
+        }
+    </script>
+</body>
+</html>
